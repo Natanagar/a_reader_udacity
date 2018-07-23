@@ -1,10 +1,7 @@
 import React, {Component} from 'react'
 import Rating from './Rating'
-class Book extends Component {
- constructor(props){
-     super(props);
 
- } 
+class Book extends Component {
     render(){
         return(
             <div className="book">
@@ -21,12 +18,12 @@ class Book extends Component {
                         </div>
                     </div>
                 <div className="book-title">{this.props.title}</div>
-                <div className="book-authors">{this.props.author}</div>
-                <Rating />
-            </div>
-        );
-    }  
- 
+            <div className="book-authors">{this.props.author}</div>
+            <Rating />
+        </div>
+        )
+    }
+    
 }
 
 export default Book;

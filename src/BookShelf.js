@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import App from './App'
 import Book from './Book'
 
 
 
-    const BookShelf = (props) => {
+    const BookShelf = (books) => {
+        console.log(books);
         return(
             <div className="bookshelf">
                 <h2 className="bookshelf-title">Want to Read</h2>
