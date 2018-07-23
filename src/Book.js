@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
+import Rating from './Rating'
 class Book extends Component {
  constructor(props){
      super(props);
-        
+
  } 
     render(){
         return(
@@ -21,6 +22,7 @@ class Book extends Component {
                     </div>
                 <div className="book-title">{this.props.title}</div>
                 <div className="book-authors">{this.props.author}</div>
+                <Rating />
             </div>
         );
     }  

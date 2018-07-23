@@ -3,6 +3,7 @@ import * as BooksAPI from './BooksAPI'
 import SearchPage from './SearchPage'
 import MainPage from './MainPage'
 import BookShelf from './BookShelf'
+import Rating from './Rating'
 
 //import Book from './Book'
 import './App.css'
@@ -18,10 +19,19 @@ class BooksApp extends React.Component {
     })
     
   }
+ 
+  createBook(books) {
+      this.setState(state => ({
+        books: state.books.concat([ books ])
+      })
+    )
+  }
   
-
   render() {
-    console.log(this.state.books);
+    const firstObject = this.state.books[6];
+    console.log(firstObject);
+    
+
     return (
      
       <div className="app">

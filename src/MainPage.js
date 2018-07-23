@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Book from './Book'
+import Rating from './Rating'
 import BookShelf from './BookShelf'
 
 class MainPage extends Component{
