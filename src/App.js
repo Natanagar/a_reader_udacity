@@ -19,23 +19,21 @@ class BooksApp extends React.Component {
     })
     
   }
- 
-  createBook(books) {
-      this.setState(state => ({
-        books: state.books.concat([ books ])
-      })
-    )
+  chooseShelf = (book, shelf) => {
+    BooksAPI.update(book, shelf)
+      .then(() => BooksAPI.getAll())
+      .then((books) => {
+        this.setState({books: books});
+      });
   }
   
   render() {
-    const firstObject = this.state.books[6];
-    console.log(firstObject);
     
 
     return (
-     
       <div className="app">
-        <MainPage />
+        <MainPage 
+        books = {this.state.books}/>
       </div>
     );
   }

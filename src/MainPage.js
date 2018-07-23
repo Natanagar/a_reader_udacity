@@ -4,7 +4,9 @@ import Rating from './Rating'
 import BookShelf from './BookShelf'
 
 class MainPage extends Component{
+  
     render(){
+      //console.log(this.chooseShelf());
         return(
             <div className="list-books">
             <div className="list-books-title">
