@@ -36,9 +36,9 @@ read(books){
             <div className="list-books-content">
             ;
               <div>
-                    <BookShelf books={this.currentlyReadingBooks()} />
-                    <BookShelf books={this.wantToRead()}/>
-                    <BookShelf books={this.read()}/>
+                    <BookShelf books={this.currentlyReadingBooks()} bookShelfTitle="Currently Reading"/>
+                    <BookShelf books={this.wantToRead()} bookShelfTitle="Want to Read"/>
+                    <BookShelf books={this.read()} bookShelfTitle="Read"/>
               </div>
             </div>
             <div className="open-search">

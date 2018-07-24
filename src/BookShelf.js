@@ -1,22 +1,18 @@
 import React, { Component } from 'react'
-import App from './App'
 import MainPage from './MainPage'
 import Book from './Book'
 
 
-    const BookShelf = ({books}) => {
-    let booksForShelf = books.slice();
+    const BookShelf = (props) => {
     
-        console.log(books);
-        console.log(booksForShelf);
         return(
            
                 <div className="bookshelf">
                     
-                        <h2 className="bookshelf-title">{books.map(book => book.shelf)}</h2>
+                        <h2 className="bookshelf-title">{props.bookShelfTitle}</h2>
                             <div className="bookshelf-books">
                                 <ol className="books-grid">
-                                    {books.map(book =>
+                                    {props.books.map(book =>
                                         <li key={book.id} >
                                         <Book {...book} />
                                     </li>
