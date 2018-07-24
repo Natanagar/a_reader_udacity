@@ -36,7 +36,7 @@ read(books){
             <div className="list-books-content">
             ;
               <div>
-                    <BookShelf books={this.currentlyReadingBooks()}/>
+                    <BookShelf books={this.currentlyReadingBooks()} />
                     <BookShelf books={this.wantToRead()}/>
                     <BookShelf books={this.read()}/>
               </div>
