@@ -1,8 +1,10 @@
 import React, {Component} from 'react'
 import Rating from './Rating'
+import BookShelf from './BookShelf'
 
 class Book extends Component {
     render(){
+        console.log(this.props);
         return(
             <div className="book">
                 <div className="book-top">
