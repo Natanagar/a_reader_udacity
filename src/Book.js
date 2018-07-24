@@ -3,16 +3,16 @@ import Rating from './Rating'
 import BookShelf from './BookShelf'
 
 class Book extends Component {
-  
+ 
     render(){
-    console.log(this.props);
+    console.log(this.props.imageLinks.thumbnail);
         return(
-            <div className="book" props={this.props.book}>
+            <div className="book">
                 <div className="book-top">
                     <div className="book-cover" style={{ 
                         width: 128, 
                         height: 193, 
-                        backgroundImage: '#' }}>
+                        backgroundImage: `url('${this.props.imageLinks.thumbnail}')` }}>
                     </div>
                         <div className="book-shelf-changer">
                             <select>
