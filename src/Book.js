@@ -3,12 +3,17 @@ import Rating from './Rating'
 import BookShelf from './BookShelf'
 
 class Book extends Component {
+  
     render(){
-       
+    console.log(this.props);
         return(
-            <div className="book">
+            <div className="book" props={this.props.book}>
                 <div className="book-top">
-                    <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: '#' }}></div>
+                    <div className="book-cover" style={{ 
+                        width: 128, 
+                        height: 193, 
+                        backgroundImage: '#' }}>
+                    </div>
                         <div className="book-shelf-changer">
                             <select>
                                 <option value="move" disabled>Move to...</option>
@@ -21,10 +26,10 @@ class Book extends Component {
                     </div>
                 <div className="book-title">{this.props.title}</div>
             <div className="book-authors">{this.props.author}</div>
-            <Rating />
-        </div>
-        )
-    }
+        <div className="book-authors">{this.props.publisher}</div>
+    <Rating />
+</div>
+)}
     
 }
 
