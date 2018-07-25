@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import * as BooksAPI from '../BooksAPI'
 
 function Book(props){
-    console.log(props.title);
+    console.log(props.shelf);
     const handeChange = event => {
         event.preventDefault();
         props.onBookChange(props.shelf);
