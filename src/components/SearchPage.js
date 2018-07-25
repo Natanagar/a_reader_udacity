@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 class SearchPage extends Component{
+ state = {
+    showSearchPage: false  
+ }
     render(){
         return(
             <div className="search-books">

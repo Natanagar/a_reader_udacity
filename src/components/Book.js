@@ -1,9 +1,18 @@
 import React, {Component} from 'react'
 import Rating from './Rating'
 import BookShelf from './BookShelf'
+import PropTypes from 'prop-types';
+import * as BooksAPI from '../BooksAPI'
 
 class Book extends Component {
- 
+
+    
+    //updateBook = (book, shelf) => {
+//  BooksAPI.update(book, book.shelf).then((data) => {
+//    let result = this.state.books.filter((filtered) => filtered.id !== book.id)
+//      this.setState({ books: [...this.state.books, changedBook] });
+//        });
+//}
     render(){
     console.log(this.props.imageLinks.thumbnail);
         return(

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MainPage from './MainPage'
 import Book from './Book'
+import PropTypes from 'prop-types';
 
 
     const BookShelf = (props) => {
