@@ -21,7 +21,7 @@ read(books){
     return readBooks;
 }
     render(){
-    console.log(this.props.books);  
+    
         return(
             <div className="list-books">
             <div className="list-books-title">
@@ -30,9 +30,14 @@ read(books){
             <div className="list-books-content">
             ;
               <div>
-                    <BookShelf books={this.currentlyReadingBooks()} bookShelfTitle='Currently Reading'/>
-                    <BookShelf books={this.wantToRead()} bookShelfTitle='Want to read'/>
-                    <BookShelf books={this.read()} bookShelfTitle='Read'/>
+                    <BookShelf books={this.currentlyReadingBooks()} 
+                    bookShelfTitle='Currently Reading'
+                    moveBook={this.props.updateShelf}/>
+                    <BookShelf books={this.wantToRead()} 
+                    bookShelfTitle='Want to read'
+                    moveBook={this.props.updateShelf}/>
+                    <BookShelf books={this.read()} bookShelfTitle='Read'
+                    moveBook={this.props.updateShelf}/>
               </div>
             </div>
             <div className="open-search">
