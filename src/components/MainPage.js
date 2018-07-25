@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import BookShelf from './BookShelf'
+import PropTypes from 'prop-types'
 
 class MainPage extends Component{
 
@@ -47,5 +48,8 @@ read(books){
         );
     }
 }
-         
+MainPage.propTypes = {
+  books: PropTypes.array,
+  updateShelf: PropTypes.func
+}         
 export default MainPage;
