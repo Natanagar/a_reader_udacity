@@ -2,11 +2,10 @@ import React from 'react'
 import * as BooksAPI from './BooksAPI'
 import SearchPage from './components/SearchPage'
 import MainPage from './components/MainPage'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
-import createBrowserHistory from 'history/createBrowserHistory'
+import { Route} from 'react-router-dom'
 import './App.css'
 import { Switch} from 'react-router'
-const history = createBrowserHistory();
+
 
 class BookApp extends React.Component {
   state = {
@@ -28,10 +27,8 @@ class BookApp extends React.Component {
 
   
   render() {
-   
-    //console.log(this.state.books);
     return (
-      <BrowserRouter history={history}>
+      
         <Switch>
             <Route exact path="/">
                 <div className="app">
@@ -44,7 +41,7 @@ class BookApp extends React.Component {
             <Route path="/searchpage" component={SearchPage}/>
            
         </Switch>
-      </BrowserRouter>  
+       
      
     );
   }

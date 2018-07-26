@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import BookShelf from './BookShelf'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 class MainPage extends Component{
 
@@ -41,9 +42,13 @@ read(books){
                     moveBook={this.props.updateShelf}/>
               </div>
             </div>
-            <div className="open-search">
-              <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
-            </div>
+            <Link to="/searchpage">
+              <div className="open-search">
+                <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+              </div>
+            </Link>
+              
+            
           </div>
         );
     }

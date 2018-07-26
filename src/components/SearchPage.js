@@ -4,6 +4,7 @@ class SearchPage extends Component{
     showSearchPage: false  
  }
     render(){
+     console.log(this.props);
         return(
             <div className="search-books">
                 <div className="search-books-bar">
