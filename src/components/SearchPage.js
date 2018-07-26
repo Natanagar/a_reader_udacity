@@ -1,10 +1,12 @@
 import React, {Component} from 'react'
+import Book from './Book'
+import PropTypes from 'prop-types';
+
 class SearchPage extends Component{
  state = {
     showSearchPage: false  
  }
     render(){
-     console.log(this.props);
         return(
             <div className="search-books">
                 <div className="search-books-bar">
@@ -15,11 +17,19 @@ class SearchPage extends Component{
                         </div>
                 </div>
                 <div className="search-books-results">
-                    <ol className="books-grid"></ol>
+                    <ol className="books-grid">
+                        Results
+                    </ol>
                 </div>
           </div>
         );
     } 
     
 }
+
+SearchPage.propTypes = {
+    books: PropTypes.array,
+    updateShelf: PropTypes.func
+}    
+
 export default SearchPage;

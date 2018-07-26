@@ -25,7 +25,7 @@ class Rating extends Component {
     //console.log(this.state);
     return (                
       <div>
-        <h2>Book's rating: {rating}</h2>
+        <h2>Rating: {rating}</h2>
         <StarRatingComponent 
           name="rate1" 
           starCount={5}

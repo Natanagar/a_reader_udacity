@@ -23,7 +23,6 @@ read(books){
     return readBooks;
 }
     render(){
-    
         return(
             <div className="list-books">
             <div className="list-books-title">
@@ -33,13 +32,17 @@ read(books){
             ;
               <div>
                     <BookShelf books={this.currentlyReadingBooks()} 
-                    bookShelfTitle='Currently Reading'
+                    bookShelfTitle='Currently reading'
                     moveBook={this.props.updateShelf}/>
+                    
                     <BookShelf books={this.wantToRead()} 
-                    bookShelfTitle='Want to read'
+                    bookShelfTitle='Want to Read'
                     moveBook={this.props.updateShelf}/>
-                    <BookShelf books={this.read()} bookShelfTitle='Read'
+                    
+                    <BookShelf books={this.read()} 
+                    bookShelfTitle='Read'
                     moveBook={this.props.updateShelf}/>
+                    
               </div>
             </div>
             <Link to="/searchpage">
