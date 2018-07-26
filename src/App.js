@@ -2,11 +2,13 @@ import React from 'react'
 import * as BooksAPI from './BooksAPI'
 import SearchPage from './components/SearchPage'
 import MainPage from './components/MainPage'
-import Book from './components/Book'
-import { BrowserRouter, Route, Link } from 'react-router-dom';
-import './App.css';
+import { BrowserRouter, Route, Link } from 'react-router-dom'
+import createBrowserHistory from 'history/createBrowserHistory'
+import './App.css'
+import { Switch} from 'react-router'
+const history = createBrowserHistory();
 
-class BooksApp extends React.Component {
+class BookApp extends React.Component {
   state = {
     books: []
   }
@@ -26,16 +28,25 @@ class BooksApp extends React.Component {
 
   
   render() {
-    
+   
     //console.log(this.state.books);
     return (
-      <div className="app">
-        <MainPage 
-        books = {this.state.books}
-        updateShelf={this.updateBook}
-        />
-      </div>
+      <BrowserRouter history={history}>
+        <Switch>
+            <Route exact path="/">
+                <div className="app">
+                    <MainPage 
+                    books = {this.state.books}
+                    updateShelf={this.updateBook}
+                  />
+                 </div>
+            </Route>
+            <Route path="/searchpage" component={SearchPage}/>
+           
+        </Switch>
+      </BrowserRouter>  
+     
     );
   }
 }
-export default BooksApp;
+export default BookApp;
