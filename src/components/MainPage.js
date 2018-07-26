@@ -50,6 +50,7 @@ read(books){
 }
 MainPage.propTypes = {
   books: PropTypes.array,
-  updateShelf: PropTypes.func
+  updateShelf: PropTypes.func,
+  children: PropTypes.element.isRequired
 }         
 export default MainPage;

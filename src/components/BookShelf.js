@@ -28,7 +28,8 @@ import PropTypes from 'prop-types';
     }
 BookShelf.propTypes = {
     books: PropTypes.array,
-    moveBook: PropTypes.func 
+    moveBook: PropTypes.func,
+    children: PropTypes.element.isRequired
 }    
 
 export default BookShelf;
