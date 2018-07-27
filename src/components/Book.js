@@ -5,12 +5,11 @@ import PropTypes from 'prop-types';
 import * as BooksAPI from '../BooksAPI'
 
 function Book(props){
-    console.log(props.shelf);
-    const handeChange = event => {
-        event.preventDefault();
-        props.onBookChange(props.shelf);
-    }
+let changeHandleShelf = (event) => {
+    console.log(props.id);
+    props.onBookChange(props, event.target.value)};
         return(
+           
                     <div className="book">
                         <div className="book-top">
                             <div className="book-cover" style={{ 
@@ -19,7 +18,7 @@ function Book(props){
                                 backgroundImage: `url('${props.imageLinks.thumbnail}')` }}>
                             </div>
                                 <div className="book-shelf-changer">
-                                    <select value = {props.shelf}>
+                                    <select value = {props.shelf} onChange={changeHandleShelf}>
                                         <option value="move" disabled>Move to...</option>
                                         <option value="currentlyReading">Currently Reading</option>
                                         <option value="wantToRead">Want to Read</option>
@@ -36,7 +35,6 @@ function Book(props){
     )
 }
 
-export default Book;
 
 Book.propTypes = {
     shelf: PropTypes.string,
@@ -47,6 +45,7 @@ Book.propTypes = {
     onBookChange : PropTypes.func
 
 }
+export default Book;
     
 /*    //updateBook = (book, shelf) => {
 //  BooksAPI.update(book, book.shelf).then((data) => {
