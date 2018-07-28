@@ -6,8 +6,9 @@ import * as BooksAPI from '../BooksAPI'
 
 function Book(props){
 let changeHandleShelf = (event) => {
-    //console.log(props.id);
+    console.log(props.onBookChange);
     props.onBookChange(props, event.target.value)};
+    let image = props.imageLinks ? props.imageLinks.thumbnail : ''
         return(
            
                     <div className="book">
@@ -15,7 +16,7 @@ let changeHandleShelf = (event) => {
                             <div className="book-cover" style={{ 
                                 width: 128, 
                                 height: 193, 
-                                backgroundImage: `url('${props.imageLinks.thumbnail}')` }}>
+                                backgroundImage: `url('${image}')` }}>
                             </div>
                                 <div className="book-shelf-changer">
                                     <select value = {props.shelf} onChange={changeHandleShelf}>
