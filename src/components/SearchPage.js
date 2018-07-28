@@ -22,22 +22,20 @@ state = {
     this.getFoundBook(query);
  }
  getFoundBook = (query)=>{
-    if(query){
+    if(query && query.length>2){
         BooksAPI.search(query).then(foundbooks => {
             if (foundbooks.error) {
                 this.setState({ foundbooks : [] });
             } else {this.setState({ foundbooks : foundbooks })};
             }
         ) 
-    }
+    } else {this.setState({ foundbooks : [] })};
 } 
 render(){
     let showBooks
         let {books, onBookChange} = this.props
         let { foundbooks, query } = this.state
-        console.log(this.state)
-        console.log(this.props)
-
+    
         if(query){
             const match = new RegExp(escapeRegExp(query), 'i');
             showBooks = foundbooks.filter((book)=>match.test(book.author));
@@ -45,7 +43,7 @@ render(){
             showBooks = foundbooks;
         }
     
-    //showBooks.sort(sortBy('author'));
+    showBooks.sort(sortBy('author'));
     return(
             <div className="search-books">
                 
