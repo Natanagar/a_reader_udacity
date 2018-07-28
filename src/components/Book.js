@@ -6,7 +6,7 @@ import * as BooksAPI from '../BooksAPI'
 
 function Book(props){
 let changeHandleShelf = (event) => {
-    console.log(props.id);
+    //console.log(props.id);
     props.onBookChange(props, event.target.value)};
         return(
            
