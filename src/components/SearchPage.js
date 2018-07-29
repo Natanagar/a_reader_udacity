@@ -3,6 +3,7 @@ import Book from './Book'
 import * as BooksAPI from '../BooksAPI'
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 
 class SearchPage extends Component{
@@ -32,6 +33,7 @@ state = {
     } else {this.setState({ foundbooks : [] })};
 } 
 render(){
+    console.log(this.props);
     let showBooks
         let {books, onBookChange} = this.props
         let { foundbooks, query } = this.state
@@ -46,9 +48,12 @@ render(){
     showBooks.sort(sortBy('author'));
     return(
             <div className="search-books">
-                
+
                     <div className="search-books-bar">
-                        <a className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</a>
+        
+                        <Link className="close-search"  to="/" title="Back to My Reads" >
+                            <a className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</a>
+                        </Link>
                             <div className="search-books-input-wrapper">
                                 <input 
                                 type="text" 
@@ -63,7 +68,8 @@ render(){
                             {this.state.foundbooks.map((book)=>
                                 <li key={book.id} >
                                 <Book {...book} 
-                                onBookChange={this.props.moveBook} />
+                                onBookChange={this.props.moveBook} 
+                                onChange={this.updateShelf} />
                                 </li>
                             )}
                         </ol>
