@@ -11,6 +11,8 @@ After that you write in terminal `yarn install` or `npm install`
 
 When all dependecies will be installed use command `yarn start` or `npm start`
 
+or you can use to `npm i a_reader_udacity` or `yarn add a_reader_udacity`
+
 ## Dependencies
 ReactJS
 HTML5
