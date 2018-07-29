@@ -47,6 +47,7 @@ render(){
     
     showBooks.sort(sortBy('author'));
     return(
+        
             <div className="search-books">
 
                     <div className="search-books-bar">
@@ -68,8 +69,7 @@ render(){
                             {this.state.foundbooks.map((book)=>
                                 <li key={book.id} >
                                 <Book {...book} 
-                                onBookChange={this.props.moveBook} 
-                                onChange={this.updateShelf} />
+                                onBookChange={this.props.updateShelf} />
                                 </li>
                             )}
                         </ol>

@@ -16,7 +16,8 @@ import PropTypes from 'prop-types';
                                     {props.books.map(book =>
                                         <li key={book.id} >
                                         <Book {...book} 
-                                        onBookChange={props.moveBook}/>
+                                        onBookChange={props.moveBook}
+                                        />
                                     </li>
                                     )}
                                     

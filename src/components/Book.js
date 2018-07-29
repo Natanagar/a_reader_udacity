@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import * as BooksAPI from '../BooksAPI'
 
 function Book(props){
-let changeHandleShelf = (event) => {
-    console.log(props);
-    props.onBookChange(props, event.target.value)};
+let changeHandleShelf = (event) => {props.onBookChange(Object.assign({}, props), event.target.value)};  //props.onBookChange(props, event.target.value);
+   
+    
     let image = props.imageLinks ? props.imageLinks.thumbnail : ''
         return(
            
@@ -48,10 +48,3 @@ Book.propTypes = {
 }
 export default Book;
     
-/*    //updateBook = (book, shelf) => {
-//  BooksAPI.update(book, book.shelf).then((data) => {
-//    let result = this.state.books.filter((filtered) => filtered.id !== book.id)
-//      this.setState({ books: [...this.state.books, changedBook] });
-//        });
-//}*/
-

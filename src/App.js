@@ -16,16 +16,14 @@ class BookApp extends React.Component {
       this.setState({ books : books })
     })
  }
- updateBook(book, shelf){
-      BooksAPI.update(book, shelf)
-      .then((state) =>
-          this.setState({
-            books : state.books.filter((oldBook=> oldBook.id !== book.id)
-              .concat([book]))
-            })
-          )
-        
-    }
+updateBook = (book, shelf) => {
+  book.shelf = shelf;
+  BooksAPI.update(book, shelf)
+  this.setState(state => ({
+    books: state.books.filter((oldBook => oldBook.id !== book.id)
+    ).concat([book])
+  }))
+}
 
   
   render(){
@@ -36,14 +34,14 @@ class BookApp extends React.Component {
                 <div className="app">
                     <MainPage 
                     books = {this.state.books}
-                    updateShelf={this.updateBook}
+                    updateShelf={this.updateBook.bind(this)}
                   />
                  </div>
             </Route>
             <Route path="/search">
               <SearchPage 
                 books = {this.state.books}
-                updateShelf={this.updateBook}
+                updateShelf={this.updateBook.bind(this)}
               />
             </Route>
            
