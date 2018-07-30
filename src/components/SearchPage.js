@@ -24,10 +24,20 @@ state = {
  }
  getFoundBook = (query)=>{
     if(query && query.length>2){
-        BooksAPI.search(query).then(foundbooks => {
-            if (foundbooks.error) {
+        BooksAPI.search(query).then(foundbooks =>{
+            if (foundbooks.error || typeof(foundbooks)== "undefined") {
                 this.setState({ foundbooks : [] });
-            } else {this.setState({ foundbooks : foundbooks })};
+            } else foundbooks.map(book=>{
+                //compare value of shelf with value of shelf in mainpage
+                let booksOnTheMainPage = this.props.books;
+                    booksOnTheMainPage.map(oldBook=>{
+                        if(oldBook.shelf !== book.shelf){
+                            book.shelf === oldBook.shelf 
+                        } else { book.shelf = "none"}
+                    })
+
+            }) 
+                this.setState({ foundbooks : foundbooks })
             }
         ) 
     } else {this.setState({ foundbooks : [] })};

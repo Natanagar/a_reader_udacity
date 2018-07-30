@@ -20,7 +20,7 @@
     "eject": "react-scripts eject"
   },
   "name": "a_reader_udacity",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "searching book in library and put it in shelves",
   "main": "index.js",
   "repository": "https://github.com/Natanagar/a_reader_udacity.git",
